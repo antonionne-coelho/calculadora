@@ -3,24 +3,24 @@
 #include <iomanip>
 
 
-int main(){
+int main(int argc, char *argv[]){
     
-    int a ;
-    int b ;
-    int c;
+    if(argc != 4){
+        {
+            std::cout << "Uso: " << argv[0] << " <num1> <num2> <num3>" << std::endl;
+            return 1; // Retorna erro se não houver exatamente 3 argumentos
+        }
+    }
+    int a = std::atoi(argv[1]);
+    int b = std::atoi(argv[2]);
+    int c = std::atoi(argv[3]);
     
-    std::cout<< "Insira o primeiro numero: ";
-    std:: cin >> a;
-    std::cout<< "Insira o segundo numero: ";
-    std:: cin >> b;
-    std::cout<< "Insira o terceiro numero: ";
-    std:: cin >> c;
-
     float resultado;
-    
-    resultado = media(a, b, c);
 
-    std::cout << "A media e ";
+    resultado = media(a, b, c);
+    
+
+    std::cout << "A media é: ";
     std::cout << std::fixed << std::setprecision(4) << resultado << std::endl;
     
     
